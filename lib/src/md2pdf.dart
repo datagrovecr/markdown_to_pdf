@@ -6,6 +6,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:markdown/markdown.dart' as md;
 import 'package:pdf/pdf.dart' as p;
 import 'package:pdf/pdf.dart';
+import 'package:flutter_emoji/flutter_emoji.dart';
 
 // computed style is a stack, each time we encounter an element like <p>... we push its style onto the stack, then pop it off at </p>
 // the top of the stack merges all of the styles of the parents.
@@ -13,7 +14,7 @@ class ComputedStyle {
   List<Style> stack = [Style()];
   push(Style s, e) {
     var base = stack.last;
-    s = s ?? Style();
+    s = s;
     s.e = e;
     stack.add(s.merge(base));
   }
@@ -100,6 +101,7 @@ class Style {
   pw.TextStyle style() {
     return pw.TextStyle(
         font: font,
+        //fontFallback: [pw.emoji],
         fontWeight: weight,
         fontSize: height,
         color: color,
@@ -148,6 +150,7 @@ class Styler {
   Chunk formatStyle(Node e, Style s) {
     style.push(s, e);
     var o = format(e);
+
     style.pop();
     return o;
   }
@@ -225,7 +228,8 @@ class Styler {
                         font: pw.Font.courier())));
           case "strong":
             return Chunk(
-                text: inlineChildren(e, Style(weight: pw.FontWeight.bold)));
+                text: inlineChildren
+                (e, Style(weight: pw.FontWeight.bold)));
           case "em":
             return Chunk(
                 text: inlineChildren(e, Style(fontStyle: pw.FontStyle.italic)));
@@ -378,6 +382,7 @@ mdtopdf(String path, String out) async {
   if (document.body == null) {
     return;
   }
+  //final emoji = await PdfGoogleFonts.notoColorEmoji();
   Chunk ch = Styler().format(document.body!);
   var doc = pw.Document();
   doc.addPage(pw.MultiPage(build: (context) => ch.widget ?? []));

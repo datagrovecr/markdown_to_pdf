@@ -1,7 +1,7 @@
 ---
 __Advertisement :)__
 
-- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
+- [__pica__](https://nodeca.github.io/pica/demo/) - high quality and fast image
   resize in browser.
 - __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
   i18n with plurals support and easy syntax.
@@ -67,7 +67,7 @@ Unordered
 
 + Create a list by starting a line with `+`, `-`, or `*`
 + Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
+  - Marker **character change forces new list** start:
     * Ac tristique libero volutpat at
     + Facilisis in pretium nisl aliquet
     - Nulla volutpat aliquam velit
@@ -136,7 +136,7 @@ Right aligned columns
 
 ## Links
 
-[link text](http://dev.nodeca.com)
+[**link text**](http://dev.nodeca.com)
 
 [link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
@@ -165,7 +165,7 @@ The killer feature of `markdown-it` is very effective support of
 
 ### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum: :kiss:  :taco:
 >
 > Shortcuts (emoticons): :-) :-( 8-) ;)
 
