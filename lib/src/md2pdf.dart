@@ -286,7 +286,7 @@ class Styler {
                   pw.SizedBox(width: 20, height: 20, child: bullet),
                   pw.Expanded(
                       child: pw.Padding(
-                          padding: pw.EdgeInsets.only(left: 10),
+                          padding: pw.EdgeInsets.only(left: 5),
                           child: pw.Column(
                               crossAxisAlignment: pw.CrossAxisAlignment.start,
                               children: wl)))
